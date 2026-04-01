@@ -19,5 +19,11 @@ class data:
         else: raise ValueError("Data inválida")
     def __str__(self):
         return f"Data: {self.__dia:02d}/{self.__mes:02d}/{self.__ano:04d}"
+    def get_dia(self):
+        return self.__dia
+    def get_mes(self):
+        return self.__mes
+    def get_ano(self):
+        return self.__ano 
 calendario = data(12, 11, 1996)
 print(calendario)
