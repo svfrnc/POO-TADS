@@ -12,4 +12,6 @@ class bingo:
                 x = random.randint(1, self.__numBolas)
                 self.__bolas.append(x)
                 return x
-        
+        def sorteados(self):
+            return self.__bolas
+    b = bingo(10)

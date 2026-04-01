@@ -1,22 +1,17 @@
 class Cliente:
     def __init__(self, nome, cpf, limite):
-        self.set__nome(nome)
-        self.set__cpf(cpf)
-        self.set__limite(limite)
+        self.__nome = nome
+        self.__cpf = cpf
+        self.__limite = limite
         self.__socio = None
-
-    def get_nome(self):
-        return self.__nome
-    
-    def get_cpf(self):
-        return self.__cpf
-    
+    def set_socio(self, c):
+        self.__socio = c
+        c.__socio = self
     def get_limite(self):
-        return self.__limite    
-    
-    def get_socio(self):
-        return self.__socio
-    
-    def set_socio(self, )
-    
+        if self.__socio == None:
+            return self.__limite
+            return self.__limite + self.__socio.__limite
+    def __str__(self):
+        if self.__socio == None:
+            return 
 
