@@ -5,3 +5,4 @@ class cliente:
         self.__email = email
         self._fone = fone
         pass
+    def 
