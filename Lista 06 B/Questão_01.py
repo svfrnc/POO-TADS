@@ -1,3 +1,5 @@
+from datetime import datetime
+
 class Cliente:
     def __init__(self, id, nome, email, fone):
         self.__id = id
@@ -26,7 +28,78 @@ class Cliente:
         return self.__email
     def get_fone(self):
         return self.__fone
+class Venda:
+    def __init__(self, id):
+        self.__id = id
+        self.__data = datetime.now()
+        self.__carrinho = True
+        self.__total = 0
+        self.__idcliente = None
+    def __str__(self):
+        return f"{self.__id} - {self.__data.strftime('%d/%m/%Y %H:%M')} - {self.__carrinho} R${self.__total:.2f} - {self.__idcliente}"
+    def set_id(self, id):
+        self.__id = id
+    def get_id(self):
+        return self.__id
+    def get_data(self):
+        return self.__data
+    def get_carrinho(self):
+        return self.__carrinho
+    def get_total(self):
+        return self.__total
+    def get_idcliente(self):
+        return self.__idcliente
+    
+    def set_id(self, id):
+        self.__id = id
+    def set_data(self, data):
+        self.__data = data
+    def set_carrinho(self, carrinho):
+        self.__carrinho = carrinho
+    def set_total(self, total):
+        self.__total = total
+    def set_idcliente(self, idcliente):
+        self.__idcliente = idcliente
 
+class VendaItem:
+    def __init__(self, id, qtd, preco):
+        self.__id = id
+        self.__qtd = qtd
+        self.__preco = preco
+        self.__idvenda =  None
+        self.__idproduto = None
+    def __str__(self):
+        return f"{self.__id} - {self.__qtd} - R${self.__preco:.2f} - {self.__idvenda} - {self.__idproduto}"
+    def set_id(self, id):
+        self.__id = id
+    def set_qtd(self, qtd):
+        self.__qtd = qtd
+    def set_preco(self, preco):
+        if preco >= 0:
+            self.__preco = preco
+        else:
+            raise ValueError ("Valor inválido de venda.")
+    def set_idvenda(self, idvenda):
+        if idvenda > 0:
+            self.__idvenda = idvenda
+        else:
+            raise ValueError ("valor de id de venda inválido.")
+    def set_idproduto(self, idproduto):
+        if idproduto > 0:
+            self.__idproduto = idproduto
+        else:
+            raise ValueError("valor de id do produto inválido.")
+    def get_id(self):
+        return self.__id
+    def get_qtd(self):
+        return self.__qtd
+    def get_preco(self):
+        return self.__preco
+    def get_idvenda(self):
+        return self.__idvenda
+    def get_idproduto(self):
+        return self.__idproduto
+    
 class Categoria:
     def __init__(self, id, descricao):
         self.__id = id
@@ -81,20 +154,9 @@ class Produto:
         return self.__preco
     def get_idcategoria(self):
         return self.__idcategoria
-class VendaItem:
-    def __init__(self, id, qtd, preco, idvenda, idproduto):
-        self.__id = id
-        self.__qtd = qtd
-        self.__preco = preco
-        self.__idvenda = idvenda
-        self.__idproduto = idproduto
-    def __str__(self):
-        return f"{self.__id} - {self.__qtd} - R${self.__preco:.2f} - {self.__idvenda} - {self.__idproduto}"
-    def set_id(self, id):
-        self.__id = id
-    def set_qtd(self, qtd):
-        self.__qtd = qtd
-        
+
+    
+    
 
     
 
