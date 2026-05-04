@@ -94,6 +94,7 @@ class VendaItem:
     def get_qtd(self):
         return self.__qtd
     def get_preco(self):
+        
         return self.__preco
     def get_idvenda(self):
         return self.__idvenda
@@ -168,6 +169,12 @@ class CategoriaDAO:
             if i.get_id() == id:
                 return i
         return None
+    @classmethod
+    def atualizar(cls, obj):
+        for i in cls.listar():
+            if (obj.get_id):
+        
+                
     
 
 
