@@ -154,6 +154,22 @@ class Produto:
         return self.__preco
     def get_idcategoria(self):
         return self.__idcategoria
+class CategoriaDAO:
+    __objetos = []
+    @classmethod
+    def inserir(cls, obj):
+        cls.__objetos.append(obj)
+    @classmethod
+    def listar(cls):
+        return cls.__objetos
+    @classmethod
+    def listar_id(cls, id):
+        for i in cls.__objetos:
+            if i.get_id() == id:
+                return i
+        return None
+    
+
 
     
     
